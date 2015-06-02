@@ -29,9 +29,6 @@ post '/api/validate.json' do
   rescue EmailVerifier::FailureException
     data['error'] = true
     data['errorText'] = "failure: could not be checked if is real"
-  rescue Exception
-    data['error'] = true
-    data['errorText'] = "exception: could not be sent"
   end
   data.to_json
 end
