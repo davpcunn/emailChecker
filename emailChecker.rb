@@ -19,9 +19,19 @@ post '/api/validate.json' do
   begin
     data['email'] = params[:email]
     data['validity'] = EmailVerifier.check(data['email'])
-    data['validFormat'] = true
-  rescue
-    data['validFormat'] = false
+    data['error'] = false
+  rescue EmailVerifier::OutOfMailServersException
+    data['error'] = true
+    data['errorText'] = "out_of_mail_server: appears to point to dead mail server"
+  rescue EmailVerifier::NoMailServerException
+    data['error'] = true
+    data['errorText'] = "no_mail_server: appears to point to domain which doesn't handle e-mail"
+  rescue EmailVerifier::FailureException
+    data['error'] = true
+    data['errorText'] = "failure: could not be checked if is real"
+  rescue Exception
+    data['error'] = true
+    data['errorText'] = "exception: could not be sent"
   end
   data.to_json
 end
