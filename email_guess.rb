@@ -92,8 +92,7 @@ def google_search(co_name)
   search = Google::Search::Web.new do |search|
     search.query = co_name
     search.size = :small
-  end.map(&:uri)
-  return search
+  end.map(&:uri||10)
 end
 
 def twitter_search(co_name)
@@ -123,10 +122,12 @@ post '/api/guess.json' do
   data['verified_emails'] = []
   data['checked_domains'] = []
   locals = get_possible_names(data['emp_name'])
-  (data['checked_domains'] << faroo_search(data['co_name'])
-  (data['checked_domains'] << twitter_search(data['co_name'])
-  data['checked_domain'].each do |address|
-    data['verified_emails'] << check_emails(address, locals)
+  domains = google_search(data['co_name'])
+  #(data['checked_domains'] << twitter_search(data['co_name'])
+  data['checked_domain'].unique
+  #perform smtp checks on the first 10 or so results
+  for i in 0..10
+    data['verified_emails'] << check_emails(domains[i], locals)
   end
   data.to_json
 end
