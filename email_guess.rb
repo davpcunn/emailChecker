@@ -31,34 +31,32 @@ def get_possible_names(employee) #takes employee name and turns it into local pa
   locals << name.first #david
   locals << name.last #cunningham
 
-  locals << name.first[0]+name.last #dcunningham
+  locals << name.first[0] + name.last #dcunningham
   locals << name.first + name.last #davidcunningham
   locals << name.first + name.last[0] #davidc
   locals << name.first[0] + name [1][0] #dc
 
-  locals << name.last[0]+name.first #cdavid
+  locals << name.last[0] + name.first #cdavid
   locals << name.last + name.first #cunninghamdavid
   locals << name.last + name.first[0] #cunninghamd
 
-  locals << name.first0]+'.'+name.last #d.cunningham
+  locals << name.first[0] + '.' + name.last #d.cunningham
   locals << name.first + '.' + name.last #david.cunningham
   locals << name.first + '.' + name.last[0] #david.c
-  locals << name.first[0] +'.'+ name [1][0] #d.c
+  locals << name.first[0] + '.' + name [1][0] #d.c
 
-  locals << name.last[0]+'.'+name.first #c.david
-  locals << name.last +'.'+ name.first #cunningham.david
-  locals << name.last +'.'+ name.first[0] #cuningham.d
+  locals << name.last[0] + '.' + name.first #c.david
+  locals << name.last + '.' + name.first #cunningham.david
+  locals << name.last + '.' + name.first[0] #cuningham.d
 
-  locals << name.first0]+'_'+name.last #d_cunningham
+  locals << name.first[0]+ '_' +name.last #d_cunningham
   locals << name.first + '_' + name.last #david_cunningham
   locals << name.first + '_' + name.last[0] #david_c
-  locals << name.first[0] +'_'+ name [1][0] #d_c
+  locals << name.first[0] + '_' + name [1][0] #d_c
 
-  locals << name.last[0]+'_'+name.first #c.david
-  locals << name.last +'_'+ name.first #cunningham.david
-  locals << name.last +'_'+ name.first[0] #cuningham.d
-
-  return locals
+  locals << name.last[0] + '_' + name.first #c.david
+  locals << name.last + '_' + name.first #cunningham.david
+  locals << name.last + '_' + name.first[0] #cuningham.d
 end
 
 def check_emails(locals, domain) #checks all names for a certain domain
