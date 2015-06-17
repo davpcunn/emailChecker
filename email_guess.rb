@@ -26,6 +26,39 @@ def validate(email) do
 end
 
 def get_possible_names(employee) #takes employee name and turns it into local patterns
+  name = employee.downcase.split(' ')
+  locals = []
+  locals << name[0] #david
+  locals << name[1] #cunningham
+
+  locals << name[0][0]+name[1] #dcunningham
+  locals << name[0] + name[1] #davidcunningham
+  locals << name[0] + name[1][0] #davidc
+  locals << name[0][0] + name [1][0] #dc
+
+  locals << name[1][0]+name[0] #cdavid
+  locals << name[1] + name[0] #cunninghamdavid
+  locals << name[1] + name[0][0] #cunninghamd
+
+  locals << name[0]0]+'.'+name[1] #d.cunningham
+  locals << name[0] + '.' + name[1] #david.cunningham
+  locals << name[0] + '.' + name[1][0] #david.c
+  locals << name[0][0] +'.'+ name [1][0] #d.c
+
+  locals << name[1][0]+'.'+name[0] #c.david
+  locals << name[1] +'.'+ name[0] #cunningham.david
+  locals << name[1] +'.'+ name[0][0] #cuningham.d
+
+  locals << name[0]0]+'_'+name[1] #d_cunningham
+  locals << name[0] + '_' + name[1] #david_cunningham
+  locals << name[0] + '_' + name[1][0] #david_c
+  locals << name[0][0] +'_'+ name [1][0] #d_c
+
+  locals << name[1][0]+'_'+name[0] #c.david
+  locals << name[1] +'_'+ name[0] #cunningham.david
+  locals << name[1] +'_'+ name[0][0] #cuningham.d
+
+  return locals
 end
 
 def check_emails(locals, domain) #checks all names for a certain domain
