@@ -1,3 +1,7 @@
+require 'active_support'
+require 'email_verifier'
+require 'dotenv'
+
 class AddressVerifier
   def initialize
     EmailVerifier.config do |config|

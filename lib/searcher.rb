@@ -1,4 +1,5 @@
-require
+require 'google_search'
+require 'search_result'
 class Searcher
  def search(co_name)
     search = Google::Search::Web.new do |search|
