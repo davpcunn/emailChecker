@@ -128,6 +128,7 @@ post '/api/guess.json' do
   #perform smtp checks on the first 10 or so results
   for i in 0..10
     data['verified_emails'] << check_emails(domains[i], locals)
+    data['checked_domains'] << domains[i]
   end
   data.to_json
 end
