@@ -4,6 +4,6 @@ class Searcher
     search = Google::Search::Web.new do |search|
       search.query = co_name
       search.size = :small
-    end.map()
+    end.map { |result, i|  SearchResult.new(result, co_name, i) }
   end
 end
