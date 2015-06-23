@@ -1,5 +1,6 @@
 require 'google_search'
-require 'search_result'
+require_relative 'search_result.rb'
+
 class Searcher
  def search(co_name)
     search = Google::Search::Web.new do |search|

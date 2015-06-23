@@ -1,4 +1,4 @@
-require 'employee_name'
+require_relative 'employee_name'
 class LocalGen
   def initialize(employee)
     @employee = employee
