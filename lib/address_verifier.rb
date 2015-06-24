@@ -8,7 +8,7 @@ class AddressVerifier
       config.verifier_email = ENV['base_email']
     end
   end
-  def validate(email) do
+  def verify(email) do
     begin
       data['validity'] = EmailVerifier.check(data['email'])
       data['error'] = false

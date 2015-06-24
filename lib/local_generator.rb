@@ -1,4 +1,5 @@
 require_relative 'employee_name.rb'
+
 class LocalGen
   def initialize(employee)
     @employee = employee
