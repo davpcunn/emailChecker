@@ -1,10 +1,10 @@
 equire 'spec_helper'
 require_relative '../../lib/search_result.rb'
 
-describe 'NumberAdder' do
+describe 'Search Result' do
 
   it "adds 2 numbers" do
-    expect(NumberAdder.new(1, 2).add).to eq(3)
+    expect(SearchResult.new().add).to eq(3)
   end
 
 end

@@ -10,7 +10,6 @@ class AddressVerifier
   end
   def validate(email) do
     begin
-      valiid
       data['validity'] = EmailVerifier.check(data['email'])
       data['error'] = false
     rescue EmailVerifier::OutOfMailServersException

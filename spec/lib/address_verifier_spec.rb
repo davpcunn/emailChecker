@@ -1,10 +1,10 @@
 equire 'spec_helper'
 require_relative '../../lib/address_verifier.rb'
 
-describe 'NumberAdder' do
+describe 'Address Verifier' do
 
   it "adds 2 numbers" do
-    expect(NumberAdder.new(1, 2).add).to eq(3)
+    expect(AddressVerifier.new('david@preferral.com').).to eq(3)
   end
 
 end

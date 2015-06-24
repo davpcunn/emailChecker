@@ -1,10 +1,10 @@
 equire 'spec_helper'
 require_relative '../../lib/local_generator.rb'
 
-describe 'NumberAdder' do
+describe 'local gernerator' do
 
-  it "adds 2 numbers" do
-    expect(NumberAdder.new(1, 2).add).to eq(3)
+  it "generates locals" do
+    expect(LocalGen.new(name).add).to eq(3)
   end
 
 end

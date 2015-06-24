@@ -11,6 +11,4 @@ class SearchResult
     @rank = rank
     @domain  = Domainatrix.parse(@uri).domain
     @titleWeight = distance(@title, query)
-  def getTitleWeight(title)
-  end
 end

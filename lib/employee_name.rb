@@ -1,5 +1,5 @@
 #parses and stores content for an employees name
-class Employee_Name
+class EmployeeName
   def initialize (name)
     parsed = name.downcase.split(' ')
     @firstname = parsed[0]
