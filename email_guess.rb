@@ -21,7 +21,7 @@ post '/api/guess.json' do
   data['verified_emails']=[]
   data['checked_domains']=[]
   locals = LocalGen.new(EmployeeName.new(data['employee'])).gen
-  search_results = Searcher.search(data['co_name'])
+  search_results = Searcher.search(data['company'])
   #perform smtp checks on the first 10 or so results
   for i in 0..10
     data['verified_emails'] << DomainChecker.new(locals, search_results[i].domain, address_verifier).check
