@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'cgi'
 require 'json'
-require 'faroo'
 require 'open-uri'
 require 'dotenv'
 require 'net/http'
