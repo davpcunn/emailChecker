@@ -11,7 +11,7 @@ class DomainChecker #checks domain for the locals email
   def check
     valid_addresses = []
     @emails.each do |email|
-      data = @verifier.verify(address)
+      data = @address_verifier.verify(email)
       if data['error'] #break if you experience an error
         break
       elsif data['valid'] #if it's valid add it

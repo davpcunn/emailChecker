@@ -6,34 +6,34 @@ class LocalGen
   end
   def gen
     locals = []
-    locals << @employee.firstname #david
-    locals << @employee.lastname #cunningham
+    locals << @employee.first_name #david
+    locals << @employee.last_name #cunningham
 
-    locals << @employee.firstinitial + @employee.lastname #dcunningham
-    locals << @employee.firstname + @employee.lastname #davidcunningham
-    locals << @employee.firstname + @employee.lastinitial #davidc
-    locals << @employee.firstinitial + @employee.lastinitial #dc
+    locals << @employee.first_initial + @employee.last_name #dcunningham
+    locals << @employee.first_name + @employee.last_name #davidcunningham
+    locals << @employee.first_name + @employee.last_initial #davidc
+    locals << @employee.first_initial + @employee.last_initial #dc
 
-    locals << @employee.lastinitial + @employee.first #cdavid
-    locals << @employee.last + @employee.first #cunninghamdavid
-    locals << @employee.last + @employee.firstinitial #cunninghamd
+    locals << @employee.last_initial + @employee.first_name #cdavid
+    locals << @employee.last_name + @employee.first_name #cunninghamdavid
+    locals << @employee.last_name + @employee.first_initial #cunninghamd
 
-    locals << @employee.firstinitial + '.' + @employee.last #d.cunningham
-    locals << @employee.first + '.' + @employee.last #david.cunningham
-    locals << @employee.first + '.' + @employee.lastinitial #david.c
-    locals << @employee.firstinitial + '.' + @employee.lastinitial #d.c
+    locals << @employee.first_initial + '.' + @employee.last_name #d.cunningham
+    locals << @employee.first_name + '.' + @employee.last_name #david.cunningham
+    locals << @employee.first_name + '.' + @employee.last_initial #david.c
+    locals << @employee.first_initial + '.' + @employee.last_initial #d.c
 
-    locals << @employee.lastinitial + '.' + @employee.first #c.david
-    locals << @employee.last + '.' + @employee.first #cunningham.david
-    locals << @employee.last + '.' + @employee.firstinitial #cuningham.d
+    locals << @employee.last_initial + '.' + @employee.first_name #c.david
+    locals << @employee.last_name + '.' + @employee.first_name #cunningham.david
+    locals << @employee.last_name + '.' + @employee.first_initial #cuningham.d
 
-    locals << @employee.firstinitial+ '_' +@employee.last #d_cunningham
-    locals << @employee.first + '_' + @employee.last #david_cunningham
-    locals << @employee.first + '_' + @employee.lastinitial #david_c
-    locals << @employee.firstinitial + '_' + @employee.lastinitial #d_c
+    locals << @employee.first_initial+ '_' +@employee.last_name #d_cunningham
+    locals << @employee.first_name + '_' + @employee.last_name #david_cunningham
+    locals << @employee.first_name + '_' + @employee.last_initial #david_c
+    locals << @employee.first_initial + '_' + @employee.last_initial #d_c
 
-    locals << @employee.lastinitial + '_' + @employee.first #c.david
-    locals << @employee.last + '_' + @employee.first #cunningham.david
-    locals << @employee.last + '_' + @employee.firstinitial #cuningham.d
+    locals << @employee.last_initial + '_' + @employee.first_name #c.david
+    locals << @employee.last_name + '_' + @employee.first_name #cunningham.david
+    locals << @employee.last_name + '_' + @employee.first_initial #cuningham.d
   end
 end

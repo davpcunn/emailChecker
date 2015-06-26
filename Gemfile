@@ -6,6 +6,6 @@ gem 'email_verifier'
 gem 'json'
 gem 'rspec'
 gem "dotenv"
-gem 'google_search'
+gem 'google-search'
 gem 'levenshtein'
 gem 'domainatrix'
