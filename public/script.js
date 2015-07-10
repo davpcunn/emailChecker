@@ -1,11 +1,12 @@
 $(document).ready(function(){
   $('#button').click(function(){
-    var myEmail = $('input[name=checkListItem]').val();
+    var EmployeeName = $('input[name=EmployeeName]').val();
+    var CompanyName = $('input[name=CompanyName]').val()
     $.ajax({
       dataType: 'json',
       url: '/api/validate.json',
       type: "POST",
-      data: {email: myEmail},
+      data: {employee: EmployeeName, company: CompanyName},
       success: function(data){
         debugger;
         if (data.error == true){
